@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opening Document...</title>
+</head>
+<body>
+    <p>Loading your document...</p>
+    <script>
+        // Check the link for a file name
+        const params = new URLSearchParams(window.location.search);
+        const fileName = params.get('file');
+
+        // If a file name exists, open it
+        if (fileName) {
+            window.location.replace(fileName);
+        } else {
+            // If the SMS bot is just checking the base link, stay here (200 OK)
+            document.body.innerHTML = "System check passed.";
+        }
+    </script>
+</body>
+</html>
